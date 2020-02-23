@@ -315,7 +315,12 @@ withCompletionHandler:(_Nullable SentryRequestOperationFinished)completionHandle
                     NSDictionary *serializedEvent = [NSJSONSerialization JSONObjectWithData:fileDictionary[@"data"]
                                                                                     options:0
                                                                                       error:nil];
-                    self.willDropEvent(serializedEvent, response, error);
+                    if ([serializedEvent isKindOfClass:[NSDictionary class]]) {
+                        self.willDropEvent(serializedEvent, response, error);
+                    } else {
+                        self.willDropEvent(@{}, response, error);
+                    }
+
                 }
                 [self.fileManager removeFileAtPath:fileDictionary[@"path"]];
             }
