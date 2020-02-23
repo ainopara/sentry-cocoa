@@ -62,7 +62,7 @@ typedef BOOL (^SentryShouldSendEvent)(SentryEvent *_Nonnull event);
  * Once it has been queued once it will be discarded if it fails again.
  */
 typedef BOOL (^SentryShouldQueueEvent)(SentryEvent *_Nonnull event, NSHTTPURLResponse *_Nullable response, NSError *_Nullable error);
-typedef BOOL (^SentryWillDropEvent)(NSDictionary<String *, id> *_Nonnull eventDict, NSHTTPURLResponse *_Nullable response, NSError *_Nullable error);
+typedef BOOL (^SentryWillDropEvent)(NSDictionary<NSString *, id> *_Nonnull eventDict, NSHTTPURLResponse *_Nullable response, NSError *_Nullable error);
 /**
  * Loglevel
  */
