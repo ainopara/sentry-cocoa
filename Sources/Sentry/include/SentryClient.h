@@ -129,6 +129,8 @@ NS_SWIFT_NAME(Client)
  */
 @property(nonatomic, copy) SentryShouldQueueEvent _Nullable shouldQueueEvent;
 
+@property(nonatomic, copy) SentryShouldQueueEvent _Nullable willDropEvent;
+
 /**
  * Increase the max number of events we store offline.
  * Be careful with this setting since too high numbers may cause your quota to exceed.

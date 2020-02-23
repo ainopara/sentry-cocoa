@@ -311,6 +311,12 @@ withCompletionHandler:(_Nullable SentryRequestOperationFinished)completionHandle
             // We want to delete the event here no matter what (if we had an internet connection)
             // since it has been tried already
             if (response != nil) {
+                if (self.willDropEvent != nil && response.statusCode != 200) {
+                    NSDictionary *serializedEvent = [NSJSONSerialization JSONObjectWithData:fileDictionary[@"data"]
+                                                                                    options:0
+                                                                                      error:nil];
+                    self.willDropEvent(serializedEvent, response, error);
+                }
                 [self.fileManager removeFileAtPath:fileDictionary[@"path"]];
             }
 
