@@ -158,7 +158,7 @@ SentryScope ()
     [self notifyListeners];
 }
 
-- (void)setExtraValue:(id)value forKey:(NSString *)key
+- (void)setExtraValue:(id _Nullable)value forKey:(NSString *)key
 {
     @synchronized(self) {
         [self.extraDictionary setValue:value forKey:key];
@@ -177,7 +177,7 @@ SentryScope ()
     [self notifyListeners];
 }
 
-- (void)setTagValue:(id)value forKey:(NSString *)key
+- (void)setTagValue:(NSString *_Nullable)value forKey:(NSString *)key
 {
     @synchronized(self) {
         [self.tagDictionary setValue:value forKey:key];

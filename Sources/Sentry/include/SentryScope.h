@@ -29,7 +29,7 @@ NS_SWIFT_NAME(Scope)
 /**
  * Set global extra -> these will be sent with every event
  */
-- (void)setTagValue:(id)value
+- (void)setTagValue:(NSString *_Nullable)value
              forKey:(NSString *)key NS_SWIFT_NAME(setTag(value:key:));
 
 /**
@@ -40,7 +40,7 @@ NS_SWIFT_NAME(Scope)
 /**
  * Set global extra -> these will be sent with every event
  */
-- (void)setExtraValue:(id)value
+- (void)setExtraValue:(id _Nullable)value
                forKey:(NSString *)key NS_SWIFT_NAME(setExtra(value:key:));
 
 /**

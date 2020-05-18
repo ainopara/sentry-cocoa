@@ -2,6 +2,8 @@
 
 ## unreleased
 
+- fix: nullability annotation in SentryScope
+
 ## 5.0.4
 
 - fix: End file at the right place with #ifdef #521
