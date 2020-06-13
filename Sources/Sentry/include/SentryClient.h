@@ -65,6 +65,8 @@ SENTRY_NO_INIT
 
 - (NSString *_Nullable)captureEnvelope:(SentryEnvelope *)envelope NS_SWIFT_NAME(capture(envelope:));
 
+- (void)attachStacktrace:(SentryEvent *)event;
+
 - (SentryFileManager *)fileManager;
 
 @end
